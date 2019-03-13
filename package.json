@@ -19,5 +19,8 @@
   "homepage": "https://github.com/t4traw/electron_helloworld#readme",
   "devDependencies": {
     "electron": "^4.0.8"
+  },
+  "dependencies": {
+    "csshake": "^1.5.3"
   }
 }

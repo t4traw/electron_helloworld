@@ -1,4 +1,4 @@
-const {app, BrowserWindow} = require('electron')
+const { app, BrowserWindow, ipcMain } = require('electron')
 const url = require('url')
 const path = require('path')
 
@@ -30,4 +30,19 @@ app.on('activate', () => {
   if (appWindow === null) {
     initApp()
   }
+})
+
+function sleep (milsec) {
+  return new Promise(resolve => setTimeout(resolve, milsec))
+}
+
+async function renderOra (args) {
+  for (i = 0; i < args; i++) {
+    appWindow.webContents.send('renderOra', 'オラ')
+    await sleep(100)
+  }
+}
+
+ipcMain.on('submitNum', function (event, args) {
+  renderOra(args)
 })
