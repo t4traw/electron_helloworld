@@ -1,10 +1,13 @@
 const { app, BrowserWindow, ipcMain } = require('electron')
 const url = require('url')
 const path = require('path')
+const Store = require('electron-store')
+const store = new Store()
 
 let appWindow
 
 function initApp () {
+  console.log(store.path)
   appWindow = new BrowserWindow({
     width: 800,
     height: 600
