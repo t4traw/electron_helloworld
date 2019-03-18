@@ -21,6 +21,6 @@
     "electron": "^4.0.8"
   },
   "dependencies": {
-    "csshake": "^1.5.3"
+    "csshake": "^1.5.3",
   }
 }
